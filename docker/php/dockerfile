@@ -1,0 +1,17 @@
+FROM php:7.4-fpm
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y git
+RUN apt-get install -y libzip-dev
+RUN apt-get install unzip
+RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install zip
+RUN apt-get -y install curl gnupg
+RUN curl -sL https://deb.nodesource.com/setup_12.x  | bash -
+RUN apt-get -y install nodejs
+
+RUN curl -sS https://getcomposer.org/installer | php -- \
+        --filename=composer \
+        --install-dir=/usr/local/bin && \
+        echo "alias composer='composer'" >> /root/.bashrc && \
+        composer
+
