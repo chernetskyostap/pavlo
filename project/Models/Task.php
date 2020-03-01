@@ -50,12 +50,10 @@ class Task extends Model
 
     public function addTask(array $task): bool
     {
-        $pass = 'qwerty';
         $query = 'INSERT INTO tasks(date, title, body, password, parent_id) VALUES ("'
             . $task['date'] . '","'
             . $task['title'] . '","'
             . $task['body'] . '","'
-            . $pass . '","'
             . $task['parent_id'] . '")';
 
         return !($this->db->query($query) === false);

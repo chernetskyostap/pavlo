@@ -12,7 +12,7 @@ class AuthController
     {
         $task = new Task;
 
-        var_dump((new TaskController())->create());
+        //var_dump((new TaskController())->create());
 
         //ViewHelper::showPage('login');
     }

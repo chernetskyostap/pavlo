@@ -36,7 +36,6 @@ class TaskController
             }
             return false;
         }
-
         $_POST['parent_id'] ??= 0;
 
         return (new Task)->addTask($_POST);

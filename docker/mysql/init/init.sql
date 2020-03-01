@@ -5,7 +5,7 @@ USE `sendpulse`;
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   `id` INT(6) AUTO_INCREMENT,
-  `email` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL UNIQUE,
   `name` VARCHAR(100) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
   PRIMARY KEY(`id`)
@@ -17,7 +17,6 @@ CREATE TABLE tasks (
   `parent_id` INT(6) NOT NULL DEFAULT '0',
   `title` VARCHAR(100) NOT NULL,
   `body` VARCHAR(100) NOT NULL,
-  `password` VARCHAR(100) NOT NULL,
   `date` DATETIME,
   PRIMARY KEY(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
